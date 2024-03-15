@@ -9,7 +9,7 @@ import { Vacation } from '@/types/Vacation';
 import { LoaderCircle } from 'lucide-react';
 import { useState } from 'react';
 import { toast } from 'sonner';
-import { ResponsiveDrawer } from './ui/responsive-drawer';
+import { ResponsiveDrawer } from './responsive-drawer';
 import { VacationForm, VacationFormValues } from './vacation-form';
 
 interface VacationActionCardProps {
