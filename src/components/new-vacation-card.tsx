@@ -4,12 +4,13 @@ import {
   DialogFooter,
   DialogTrigger,
 } from '@/components/ui/dialog';
-import { ScrollArea } from '@/components/ui/scroll-area';
+import { useMediaQuery } from '@/hooks/use-media-query';
 import { Vacation } from '@/types/Vacation';
 import { LoaderCircle } from 'lucide-react';
 import { useState } from 'react';
 import { toast } from 'sonner';
 import { ResponsiveDrawer } from './ui/responsive-drawer';
+import { ScrollArea } from './ui/scroll-area';
 import { VacationForm, VacationFormValues } from './vacation-form';
 
 interface NewVacationCardProps {
@@ -19,6 +20,7 @@ interface NewVacationCardProps {
 export function NewVacationCard({ onVacationCreated }: NewVacationCardProps) {
   const [open, setOpen] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
+  const isDesktop = useMediaQuery('(min-width: 768px)');
 
   const onSubmit = (values: VacationFormValues) => {
     setIsSaving(true);
@@ -54,9 +56,13 @@ export function NewVacationCard({ onVacationCreated }: NewVacationCardProps) {
           "Create a personalized itinerary for your next trip. Click save when you're done.",
         children: (
           <fieldset disabled={isSaving} className='group'>
-            <ScrollArea className='h-[100%] md:h-72 w-full'>
+            {isDesktop ? (
+              <ScrollArea className='h-auto md:h-72 w-full'>
+                <VacationForm onSubmit={onSubmit} />
+              </ScrollArea>
+            ) : (
               <VacationForm onSubmit={onSubmit} />
-            </ScrollArea>
+            )}
 
             <DialogFooter className='px-4 mb-4 md:mb-0 md:px-0 gap-2 sm:items-end'>
               <DialogClose asChild>
