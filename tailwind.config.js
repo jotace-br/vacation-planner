@@ -2,6 +2,7 @@
 import twanimate from 'tailwindcss-animate';
 
 export default {
+  darkmode: 'class',
   content: [
     './index.html',
     './pages/**/*.{ts,tsx}',
