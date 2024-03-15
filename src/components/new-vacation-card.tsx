@@ -40,10 +40,10 @@ export function NewVacationCard({ onVacationCreated }: NewVacationCardProps) {
       setOpen={setOpen}
       trigger={
         <DialogTrigger className='flex flex-col text-left rounded-md bg-slate-700 gap-2 p-5 outline-none hover:ring-2 hover:ring-slate-600 focus-visible:ring-2 focus-visible:ring-lime-400'>
-          <span className='text-sm font-medium text-slate-200'>
+          <span className='text-sm font-medium text-slate-100'>
             Add new vacation plan
           </span>
-          <p className='text-sm leading-6 text-slate-400'>
+          <p className='text-sm leading-6 text-slate-200'>
             Start planning your next adventure today.
           </p>
         </DialogTrigger>
@@ -58,7 +58,7 @@ export function NewVacationCard({ onVacationCreated }: NewVacationCardProps) {
               <VacationForm onSubmit={onSubmit} />
             </ScrollArea>
 
-            <DialogFooter className='px-4 md:px-0 gap-2 sm:items-end'>
+            <DialogFooter className='px-4 mb-4 md:mb-0 md:px-0 gap-2 sm:items-end'>
               <DialogClose asChild>
                 <Button variant='ghost'>Cancel</Button>
               </DialogClose>

@@ -64,7 +64,7 @@ export const EditVacationCard = forwardRef<
               <VacationForm vacation={vacation} onSubmit={onSubmit} />
             </ScrollArea>
 
-            <DialogFooter className='px-4 md:px-0 gap-2 sm:items-end'>
+            <DialogFooter className='px-4 mb-4 md:mb-0 md:px-0 gap-2 sm:items-end'>
               <DialogClose asChild>
                 <Button variant='ghost'>Cancel</Button>
               </DialogClose>

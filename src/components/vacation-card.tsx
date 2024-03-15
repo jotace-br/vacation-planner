@@ -50,7 +50,10 @@ export function VacationCard({
       >
         <div className='absolute right-4 top-6'>
           <DropdownMenu>
-            <DropdownMenuTrigger asChild>
+            <DropdownMenuTrigger
+              asChild
+              aria-label={`Vacation card ${vacation.title} options`}
+            >
               <button>
                 <EllipsisVertical />
               </button>
@@ -75,12 +78,14 @@ export function VacationCard({
           </DropdownMenu>
         </div>
         <CardHeader>
-          <CardTitle className='font-medium first-letter:capitalize'>
-            {vacation.title}
-            <span className='text-sm ml-1 text-slate-400 font-normal'>
+          <div className='flex items-center gap-1 flex-wrap'>
+            <CardTitle className='font-medium first-letter:capitalize'>
+              {vacation.title}
+            </CardTitle>
+            <span className='text-sm text-slate-400 font-normal pr-5'>
               ({calculateDistanceFromNow(vacation?.created_at || new Date())})
             </span>
-          </CardTitle>
+          </div>
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger>

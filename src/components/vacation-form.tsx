@@ -93,7 +93,7 @@ export function VacationForm({
       <form
         id='hook-form'
         onSubmit={form.handleSubmit(onSubmit)}
-        className='p-4 sm:p-0 space-y-4 md:pr-4 group-disabled:opacity-50'
+        className='p-4 md:p-0 space-y-4 md:pr-4 group-disabled:opacity-50'
       >
         <FormField
           control={form.control}
