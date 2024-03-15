@@ -86,6 +86,7 @@ export function VacationForm({
   const form = useForm<VacationFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: defaultValues,
+    mode: 'onBlur',
   });
 
   return (
